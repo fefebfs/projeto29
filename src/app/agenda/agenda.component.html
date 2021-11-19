@@ -1,0 +1,64 @@
+<mat-card>
+  <section class="box-agenda">
+      <div class="progresso">
+          <p class="progresso-atual " [ngClass]="{'complete': agenda.especialidade}">
+            <span [ngClass]="{'complete': agenda.especialidade}"></span>
+          </p>
+    
+          <p class="progresso-atual" [ngClass]="{'complete': agenda.medico}">
+            <span [ngClass]="{'complete': agenda.medico}"></span>
+          </p>
+    
+          <p class="progresso-atual" [ngClass]="{'complete': agenda.hora}">
+            <span [ngClass]="{'complete': agenda.hora}"></span>
+          </p>
+      </div>
+  
+    <form #form="ngForm" (ngSubmit)="cadastrar(form)" class="form-agenda">
+  
+        <div class="box-input">
+            <label for="especialidade">Selecionar Especialidade</label>
+            <select id="especialidade" name="especialidade" #especialidade [(ngModel)]="agenda.especialidade">
+              <option value="1">Infantil</option>
+              <option value="2">Adolescente</option>
+              <option value="3">Adulto</option>
+            </select>
+        </div>
+    
+        <div class="box-input invisible" [ngClass]="{'visible': agenda.especialidade}">
+            <label for="medico">Selecione o Médico</label>
+            <select id="medico" name="medico" #medico [(ngModel)]="agenda.medico">
+              <option value="1">Luiz Algusto</option>
+              <option value="2">João Paulo</option>
+            </select>
+        </div>
+  
+        <br>
+        
+        <div class="box-input-date invisible" [ngClass]="{'visible': agenda.medico && agenda.especialidade}">
+        <mat-form-field appearance="fill">
+          <mat-label>Selecione a Data</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>    
+      </div>
+  
+        <div class="box-input invisible" [ngClass]="{'visible': agenda.medico && agenda.especialidade}">
+            <label for="hora">Selecione o Horário</label>
+            <select id="hora" name="hora" #hora [(ngModel)]="agenda.hora">
+              <option value="1">07:00</option>
+              <option value="2">09:00</option>
+              <option value="2">11:00</option>
+              <option value="2">13:00</option>
+              <option value="2">15:00</option>
+              <option value="2">17:00</option>
+            </select>
+        </div>
+      </form>
+      
+  
+        <button class="btn btn-primary">agendar</button>
+    
+    </section>
+  </mat-card>

@@ -1,0 +1,143 @@
+.mat-card{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 96%;   
+}
+.box-agendamento {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-agendamento {
+	width: 500px;
+	max-width: 100%;
+	padding: 20px 10px 0px 10px;
+	border-radius: 5px;
+}
+
+.progresso {
+	width: 700px;
+	max-width: calc(100% - 40px);
+	margin-top: 40px;
+	margin-bottom: 2em;
+	display: flex;
+	height: 13px;
+	background-color: rgb(240, 239, 239);
+	border: 1px solid rgba(99, 99, 99, 0.1);
+	border-radius: 3px;
+	margin-left: 25%;
+}
+
+.progresso-atual {
+	flex: 1;
+	height: 100%;
+	position: relative;
+}
+
+.progresso-atual span {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	bottom: -8px;
+	right: -2px;
+}
+
+.progresso-atual.complete {
+	background-color: #3ee913;
+	transition: all 1.5s;
+}
+
+.progresso-atual span.complete {
+	background-color: #fff;
+	border: 3px solid #3ee913;
+}
+
+.box-input {
+	width: 100%;
+	max-width: 100%;
+	padding: 10px 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.box-input-date {
+	margin: 0 8px 16px 0;
+}
+
+.box-input label {
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 1em;
+}
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #f89c24;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #f89c24;
+    transition: background-color .5s;
+}
+.btn-primary:hover {
+    background-color: #f89c24;
+    color: #9e6905;
+}
+
+.box-input select {
+	width: 100%;
+	max-width: 100%;
+	height: 40px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	background-color: #fff;
+}
+
+.invisible {
+	opacity: 0;
+	height: 0;
+	width: 0;
+	visibility: hidden;
+	transform: translate3d(-80px, 0, 0);
+}
+
+.btn-agendar {
+	width: 220px;
+	padding: 14px 15px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.1em;
+	background-color: hsl(29, 95%, 50%);
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.6);
+	display: block;
+	margin-top: 12px;
+	cursor: pointer;
+}
+
+.visible {
+	opacity: 1;
+	height: auto;
+	width: auto;
+	visibility: visible;
+	transition: 1s;
+	transform: translate3d(0px, 0, 0);
+}
+
+@media only screen and (max-width: 380px) {
+	.btn-agendar {
+		width: 100%;
+	}
+}

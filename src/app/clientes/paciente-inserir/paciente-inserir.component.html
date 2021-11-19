@@ -1,0 +1,122 @@
+<mat-card>
+  <button
+    
+    class="btn btn-primary"
+    routerLink="/criarPaciente"
+  >
+    Usuário
+  </button>
+  <button style="margin-left: 30px" class="btn btn-primary" routerLink="/criar">
+    Psicológo
+  </button>
+  <br />
+  <br />
+  <mat-spinner *ngIf="estaCarregando"></mat-spinner>
+  <form (submit)="onSalvarPaciente()" *ngIf="!estaCarregando">
+    <mat-form-field>
+      <input
+        required
+        minlength="4"
+        type="text"
+        matInput
+        placeholder="Nome"
+        name="nome"
+        formControlName="nome"
+      /><mat-error *ngIf="form.get('nome')!.invalid"
+        >Digite um nome válido</mat-error
+      >
+    </mat-form-field>
+    <div>
+      <button
+        mat-stroked-button
+        type="button"
+        (click)="selecionaArquivo.click()"
+      >
+        Selecionar Imagem
+      </button>
+      <input type="file" #selecionaArquivo />
+    </div>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        matInput
+        placeholder="Telefone"
+        name="fone"
+        formControlName="fone"
+      />
+      <mat-error *ngIf="form.get('fone')!.invalid"
+        >Digite um telefone válido</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        matInput
+        placeholder="Email"
+        name="email"
+        formControlName="email"
+      />
+      <mat-error *ngIf="form.get('email')!.invalid"
+        >Digite um nome válido</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        matInput
+        placeholder="Senha"
+        formControlName="senha"
+        name="senha"
+      />
+      <mat-error *ngIf="form.get('senha')!.invalid"
+        >Informe nova senha</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select
+        required
+        matSelect
+        placeholder="Estado"
+        formControlName="estado"
+        name="estado"
+      >
+        <mat-option value="SP">SP</mat-option>
+        <mat-option value="RJ">RJ</mat-option>
+        <mat-option value="BA">BA</mat-option>
+        <mat-option value="MG">MG</mat-option>
+        <mat-option value="SE">SE</mat-option>
+        <mat-option value="RN">RN</mat-option>
+        <mat-option value="CE">CE</mat-option>
+        <mat-option value="TO">TO</mat-option>
+        <mat-option value="RO">RO</mat-option>
+        <mat-option value="RR">RR</mat-option>
+        <mat-option value="RS">RS</mat-option>
+        <mat-option value="MS">MS</mat-option>
+        <mat-option value="MT">MT</mat-option>
+        <mat-option value="SC">SC</mat-option>
+        <mat-option value="PR">PR</mat-option>
+        <mat-option value="PA">PA</mat-option>
+        <mat-option value="PI">PI</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        required
+        matInput
+        placeholder="Data de Nascimento"
+        formControlName="datanasc"
+        name="datanasc"
+      />
+      <mat-error *ngIf="form.get('datanasc')!.invalid"
+        >Digite a Data de nascimento</mat-error
+      >
+    </mat-form-field>
+    <button color="accent" mat-raised-button>Inserir</button>
+    <button id="bn_voluntarios" mat-raised-button>Verificar Voluntarios</button>
+  </form>
+</mat-card>

@@ -1,0 +1,38 @@
+<mat-spinner *ngIf="estaCarregando"></mat-spinner>
+<mat-accordion *ngIf="clientes.length > 0 && !estaCarregando">
+  <mat-expansion-panel *ngFor="let cliente of clientes">
+    <mat-expansion-panel-header
+      >Nome: {{ cliente.nome }}
+    </mat-expansion-panel-header>
+    <div class="cliente-imagem">
+      <img [src]="cliente.imagemURL" [alt]="cliente.nome" />
+    </div>
+    <p>Fone: {{ cliente.fone }}</p>
+    <hr />
+    <p>Email: {{ cliente.email }}</p>
+    <hr />
+    <p>Especialidade: {{ cliente.especialidade }}</p>
+    <hr />
+    <p>Estado: {{ cliente.estado }}</p>
+    <hr />
+    <p>CRP: {{ cliente.crp }}</p>
+    <hr />
+    <mat-action-row>
+      <a mat-button color="primary" [routerLink]="['/editar', cliente.id]"
+        >EDITAR</a
+      >
+      <button mat-button color="warn" (click)="onDelete(cliente.id)">
+        REMOVER
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<p
+  class="mat-body-1"
+  style="text-align: center"
+  *ngIf="clientes.length <= 0 && !estaCarregando"
+>
+  Nenhum cliente cadastrado
+</p>
+<button id="bn_voltar" mat-raised-button>Voltar ao inicio</button>

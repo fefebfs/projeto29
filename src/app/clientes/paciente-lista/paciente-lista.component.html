@@ -1,0 +1,25 @@
+<mat-spinner *ngIf="estaCarregando"></mat-spinner>
+<mat-accordion *ngIf="pacientes.length > 0 && !estaCarregando">
+    <mat-expansion-panel *ngFor="let flup of pacientes">
+      <mat-expansion-panel-header
+        >Nome: {{ flup.nome }}
+      </mat-expansion-panel-header>
+      <p>Fone: {{ flup.fone }}</p>
+    <hr />
+    <p>Email: {{ flup.email }}</p>
+    <hr />
+    <p>Estado: {{ flup.estado }}</p>
+    <hr />
+    <p>Data Nascimento: {{ flup.datanasc}}</p>
+    <hr />
+      <mat-action-row>
+        <a mat-button color="primary" [routerLink]="['/editarPaciente', flup.id]">EDITAR</a>
+        <button mat-button color="warn"(click)="onDeletePaciente(flup.id)">REMOVER</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  
+  <p class="mat-body-1" style="text-align: center" *ngIf="pacientes.length <= 0 &&! estaCarregando">
+    Nenhum paciente cadastrado
+  </p>
+  <button id=bn_voltar mat-raised-button > Voltar ao inicio </button>

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+.mat-card{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 96%;
+    
+    
+}
+
+.carousel{
+    align-self: center;
+    margin:auto; 
+    width: 750px;
+}
+ 
+#title{
+    font-family: 'Staatliches', cursive;
+    size:30px;
+    
+}

@@ -1,0 +1,15 @@
+:host {
+    margin-top: 1rem;
+    display: block;
+  }
+
+  .mat-raised-button{
+    background-color: rgb(240, 162, 47);
+  }
+  #bn_voltar{
+    margin-left: 10px; 
+    margin-top: 30px;
+  }
+  .mat-spinner {
+    margin: auto;
+    }
