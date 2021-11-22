@@ -41,12 +41,12 @@ router.post(
       res.status(201).json({
         mensagem: "paciente inserido",
         id: pacienteInserido._id,
-        nome: clienteInserido.nome,
-        fone: clienteInserido.fone,
-        email: clienteInserido.email,
-        senha: clienteInserido.senha,
-        estado: clienteInserido.estado,
-        imagemURL: clienteInserido.imagemURL,
+        nome: pacienteInserido.nome,
+        fone: pacienteInserido.fone,
+        email: pacienteInserido.email,
+        senha: pacienteInserido.senha,
+        estado: pacienteInserido.estado,
+        imagemURL: pacienteInserido.imagemURL,
       });
     });
   }

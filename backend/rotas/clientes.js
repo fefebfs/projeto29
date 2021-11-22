@@ -2,6 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Cliente = require("../models/cliente");
 const multer = require("multer");
+
+const MIME_TYPE_EXTENSAO_MAPA = {
+  "image/png": "png",
+  "image/jpeg": "jpg",
+  "image/jpg": "jpg",
+  "image/bmp": "bmp",
+};
+
 const armazenamento = multer.diskStorage({
   //requisição, arquivo extraido e uma função a ser
   //executada, capaz de indicar um erro ou devolver
