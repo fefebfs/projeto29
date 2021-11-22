@@ -33,10 +33,7 @@ export class ClienteInserirComponent implements OnInit {
             email: new FormControl(null, {
                 validators: [Validators.required, Validators.email]
             }),
-            imagem: new FormControl(null, {
-                validators: [Validators.required],
-                //asyncValidators: [mimeTypeValidator]
-            }),
+            
             senha: new FormControl(null, {
                 validators: [Validators.required, Validators.minLength(6)]
             }),
@@ -45,7 +42,11 @@ export class ClienteInserirComponent implements OnInit {
             }),
             crp: new FormControl(null, {
                 validators: [Validators.required]
-            })
+            }),
+            imagem: new FormControl(null, {
+                validators: [Validators.required],
+                //asyncValidators: [mimeTypeValidator]
+            }),
         })
         this.route.paramMap.subscribe((paramMap: ParamMap) => {
             if (paramMap.has("idCliente")) {
